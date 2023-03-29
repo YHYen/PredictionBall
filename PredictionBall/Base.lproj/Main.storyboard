@@ -1,24 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PredictionBall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magic 8 ball" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do6-cm-YIr">
+                                <rect key="frame" x="16" y="20" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="mX2-0Z-Reb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8-ball" translatesAutoresizingMaskIntoConstraints="NO" id="rjH-eO-JiD">
+                                <rect key="frame" x="16" y="56" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rjH-eO-JiD" secondAttribute="height" multiplier="1:1" id="EXg-fn-acQ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ff-VU-dPI">
+                                <rect key="frame" x="68" y="407" width="239" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="3Jz-9o-vQN"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="239" id="vXd-RW-7ji"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Answer My Yes/No Question"/>
+                                <connections>
+                                    <action selector="questionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BB5-Rg-jYX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is where your answer will be!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sez-ei-yQc">
+                                <rect key="frame" x="16" y="452" width="343" height="98.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="do6-cm-YIr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="10k-HQ-uwq"/>
+                            <constraint firstItem="do6-cm-YIr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="9UP-qC-j5h"/>
+                            <constraint firstItem="4ff-VU-dPI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HuY-RU-ZTB"/>
+                            <constraint firstItem="rjH-eO-JiD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="RVF-4r-Qik"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sez-ei-yQc" secondAttribute="trailing" constant="16" id="Rb6-HC-vD8"/>
+                            <constraint firstItem="Sez-ei-yQc" firstAttribute="top" secondItem="4ff-VU-dPI" secondAttribute="bottom" constant="10" id="TWp-aX-eDh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="do6-cm-YIr" secondAttribute="trailing" constant="16" id="Xih-nA-aQM"/>
+                            <constraint firstItem="rjH-eO-JiD" firstAttribute="top" secondItem="do6-cm-YIr" secondAttribute="bottom" constant="15" id="eQG-dR-pWC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rjH-eO-JiD" secondAttribute="trailing" constant="16" id="fbO-QG-y9Q"/>
+                            <constraint firstItem="4ff-VU-dPI" firstAttribute="top" secondItem="rjH-eO-JiD" secondAttribute="bottom" constant="8" id="pHo-WU-T0C"/>
+                            <constraint firstItem="Sez-ei-yQc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wmv-Kk-8dz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="Sez-ei-yQc" id="rxi-3B-e2v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="135.19999999999999" y="3.1484257871064472"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="8-ball" width="387" height="387"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
